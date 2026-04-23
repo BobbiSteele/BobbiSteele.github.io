@@ -5,16 +5,28 @@ import { useState } from "react";
 
 type Slide = {
   title: string;
-  points: string[];
+  points: Array<{
+    label: string;
+    text: string;
+  }>;
 };
 
 const slides: Slide[] = [
   {
     title: "What is a password manager?",
     points: [
-      "A password manager stores and organizes your passwords securely so you do not need to memorize every login.",
-      "A good password uses length, randomness, and uniqueness for every account.",
-      "Many apps that label a password as strong use basic checks only. They often do not have access to the same dictionaries, breach data, or cracking tools attackers use, so a 'strong' label may still be misleading.",
+      {
+        label: "Password Manager",
+        text: "A password manager securely stores and organizes your logins, so you do not need to memorize every password.",
+      },
+      {
+        label: "Good Password Design",
+        text: "Strong passwords are long, random, and unique for each account. Reuse is one of the biggest risks.",
+      },
+      {
+        label: "Why 'Strong' Meters Can Mislead",
+        text: "Many apps only run basic checks. They usually do not test against the same dictionaries, leaked password sets, or cracking strategies real attackers use.",
+      },
     ],
   },
 ];
@@ -43,10 +55,10 @@ export default function OnePasswordPage() {
 
       <div className="relative mx-auto flex w-full max-w-4xl flex-col gap-8 px-6 py-16 sm:px-10 sm:py-20">
         <header className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.35em] text-zinc-400">Project Spotlight</p>
-          <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">1Password</h1>
+          <p className="text-xs uppercase tracking-[0.35em] text-zinc-400">Vivira Health Lab GmbH (Public Trainings)</p>
+          <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">1Password Training</h1>
           <p className="max-w-2xl text-zinc-300">
-            A clean, presentation-style walkthrough of password basics and common strength checker misconceptions.
+            Best practices for creating and managing strong passwords with 1Password and why it matters for security.
           </p>
         </header>
 
@@ -65,12 +77,26 @@ export default function OnePasswordPage() {
             />
           </div>
 
-          <h2 className="text-2xl font-semibold text-white sm:text-3xl">{slide.title}</h2>
-          <ul className="mt-5 list-disc space-y-4 pl-6 text-zinc-200 marker:text-cyan-300">
-            {slide.points.map((point) => (
-              <li key={point}>{point}</li>
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
+            {slide.title}
+          </h2>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {slide.points.map((point, index) => (
+              <article
+                key={point.label}
+                className="rounded-xl border border-white/10 bg-zinc-900/70 p-4 shadow-[0_10px_35px_rgba(0,0,0,0.25)]"
+              >
+                <div className="mb-3 inline-flex items-center gap-2">
+                  <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full border border-cyan-300/40 bg-cyan-400/10 px-2 text-xs font-semibold text-cyan-200">
+                    {index + 1}
+                  </span>
+                  <h3 className="text-sm font-semibold tracking-wide text-zinc-100">{point.label}</h3>
+                </div>
+                <p className="text-sm leading-relaxed text-zinc-300">{point.text}</p>
+              </article>
             ))}
-          </ul>
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <button
