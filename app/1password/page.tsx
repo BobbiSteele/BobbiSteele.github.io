@@ -53,16 +53,16 @@ export default function OnePasswordPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_45%)]" />
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-4xl flex-col gap-8 px-6 py-16 sm:px-10 sm:py-20">
-        <header className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.35em] text-zinc-400">Vivira Health Lab GmbH (Public Trainings)</p>
-          <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">1Password Training</h1>
-          <p className="max-w-2xl text-zinc-300">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-10 sm:px-10 sm:py-12">
+        <header className="space-y-2">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-zinc-500">Vivira Health Lab GmbH (Public Trainings)</p>
+          <h1 className="text-xl font-semibold tracking-tight text-zinc-100 sm:text-2xl">1Password Training</h1>
+          <p className="max-w-xl text-sm text-zinc-400">
             Best practices for creating and managing strong passwords with 1Password and why it matters for security.
           </p>
         </header>
 
-        <section className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur sm:p-8">
+        <section className="min-h-[68vh] rounded-2xl border border-white/10 bg-white/5 p-7 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur sm:p-10">
           <div className="mb-5 flex items-center justify-between gap-4">
             <span className="rounded-full border border-cyan-400/40 bg-cyan-400/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-cyan-200">
               Slide {currentSlide + 1}
@@ -77,7 +77,7 @@ export default function OnePasswordPage() {
             />
           </div>
 
-          <h2 className="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
+          <h2 className="text-5xl font-semibold leading-tight tracking-tight text-white sm:text-6xl md:text-7xl">
             {slide.title}
           </h2>
 
