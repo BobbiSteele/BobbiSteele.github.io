@@ -7,6 +7,8 @@ import type { ReactNode } from "react";
 
 type Slide = {
   title: string;
+  videoEmbedUrl?: string;
+  videoPaddingBottom?: string;
   articleParagraphs?: ReactNode[];
   points?: Array<{
     label: string;
@@ -121,6 +123,11 @@ const slides: Slide[] = [
         the password to your password management system.
       </>,
     ],
+  },
+  {
+    title: "Getting started with 1Password",
+    videoEmbedUrl: "https://www.loom.com/embed/5f77d8add4b94863b6ec46ab20504522",
+    videoPaddingBottom: "64.98194945848375%",
   },
   {
     title: "Quiz",
@@ -277,6 +284,22 @@ export default function OnePasswordPage() {
                   </article>
                 );
               })}
+            </div>
+          )}
+
+          {slide.videoEmbedUrl && (
+            <div className="mx-auto mt-8 w-full max-w-4xl overflow-hidden rounded-xl border border-[#4F5555]/25 bg-[#FFFFFF] shadow-[0_10px_30px_rgba(79,85,85,0.10)]">
+              <div className="relative w-full" style={{ paddingBottom: slide.videoPaddingBottom ?? "56.25%" }}>
+                <iframe
+                  src={slide.videoEmbedUrl}
+                  title="Embedded training video"
+                  className="absolute left-0 top-0 h-full w-full"
+                  frameBorder={0}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
             </div>
           )}
 
