@@ -3,9 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import type { ReactNode } from "react";
 
 type Slide = {
   title: string;
+  articleParagraphs?: ReactNode[];
   points?: Array<{
     label: string;
     text: string;
@@ -21,23 +23,103 @@ type Slide = {
 const slides: Slide[] = [
   {
     title: "What is a password manager?",
-    points: [
-      {
-        label: "Crackable Passwords",
-        text: "People tend to create crackable passwords that are easy to hack into. Most people looking to hack into accounts use various dictionaries that are available online to try and figure out what passwords people have.",
-      },
-      {
-        label: "Common Pattern Example",
-        text: "If your password is Berlin2016InOmNiA!!, this will only take a few minutes at most to be cracked since these systems continue to attempt combinations until they succeed.",
-      },
-      {
-        label: "Leet Speak Is Still Guessable",
-        text: "Even if you try to trick the system by replacing letters with numbers, if the spelling is still correct, hackers can do this as well. So, B3rl1n2016Ins0mNi4!! is also an insecure password as '1' is a common replacement for 'i', '0' for 'o' and '4' for 'a'. This writing form is called leet or 1337 where letters are replaced by numbers.",
-      },
-      {
-        label: "Stronger Alternative",
-        text: "Stronger passwords would have intentional misspellings like Be3rli1n2016Inns0pmNi4!!",
-      },
+    articleParagraphs: [
+      <>
+        People tend to create{" "}
+        <span className="group relative inline-block align-middle">
+          <span className="rounded-md bg-[#FF7A5A]/25 px-1.5 py-0.5 font-semibold text-[#4F5555]">crackable passwords</span>
+          <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-3 hidden w-80 -translate-x-1/2 rounded-lg border-2 border-[#FF7A5A]/60 bg-[#FFFFFF] p-3 text-sm leading-6 text-[#4F5555] shadow-[0_10px_30px_rgba(79,85,85,0.14),0_0_0_4px_rgba(255,122,90,0.10)] group-hover:block">
+            To defend against dictionary attacks, passwords must go beyond basic complexity filters. Even a complex-looking password is vulnerable if it consists of common words or phrases that hackers can systematically test.
+          </span>
+        </span>{" "}
+        that are easy to
+        hack into. Most people looking to hack into accounts use various dictionaries that are available online to try and
+        figure out what passwords people have.
+      </>,
+      <>
+        If your password is{" "}
+        <span className="group relative inline-block align-middle">
+          <span className="rounded-md bg-[#FF7A5A]/25 px-1.5 py-0.5 font-semibold text-[#4F5555]">Berlin2016InOmNiA!!</span>
+          <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-3 hidden w-80 -translate-x-1/2 rounded-lg border-2 border-[#FF7A5A]/60 bg-[#FFFFFF] p-3 text-sm leading-6 text-[#4F5555] shadow-[0_10px_30px_rgba(79,85,85,0.14),0_0_0_4px_rgba(255,122,90,0.10)] group-hover:block">
+            This password is weak because it relies on common dictionary words like "Berlin" and "Insomnia." Adding a "!" doesn&apos;t help much, as hackers already expect and test for common symbols.
+          </span>
+        </span>
+        , this will{" "}
+        <span className="underline decoration-[#FF7A5A] decoration-2 underline-offset-2">only take a few minutes at most to be cracked</span> since these
+        systems continue to attempt combinations until they succeed.
+      </>,
+      <>
+        Even if you try to trick the system by replacing letters with numbers, if the spelling is still correct, hackers can do
+        this as well. So, B3rl1n2016Ins0mNi4!! is also an insecure password as "1" is a common replacement for "i", "0" for
+        "o" and "4" for "a". This writing form is called leet or 1337 where letters are replaced by numbers.
+      </>,
+      <>
+        Stronger passwords would have intentional misspellings like{" "}
+        <span className="group relative inline-block align-middle">
+          <span className="rounded-md bg-[#FF7A5A]/25 px-1.5 py-0.5 font-semibold text-[#4F5555]">Be3rli1n2016Inns0pmNi4!!</span>
+          <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-3 hidden w-80 -translate-x-1/2 rounded-lg border-2 border-[#FF7A5A]/60 bg-[#FFFFFF] p-3 text-sm leading-6 text-[#4F5555] shadow-[0_10px_30px_rgba(79,85,85,0.14),0_0_0_4px_rgba(255,122,90,0.10)] group-hover:block">
+            This password is more secure because it avoids standard dictionary words. By misspelling "Berlin" and "Insomnia" and substituting letters with numbers, you make it much harder for automated tools to guess.
+          </span>
+        </span>
+      </>,
+    ],
+  },
+  {
+    title: "Why password managers matter",
+    articleParagraphs: [
+      <>
+        <span className="group relative inline-block align-middle">
+          <span className="rounded-md bg-[#FF7A5A]/25 px-1.5 py-0.5 font-semibold text-[#4F5555]">
+            Each platform should use a different password,
+          </span>
+          <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-3 hidden w-80 -translate-x-1/2 rounded-lg border-2 border-[#FF7A5A]/60 bg-[#FFFFFF] p-3 text-sm leading-6 text-[#4F5555] shadow-[0_10px_30px_rgba(79,85,85,0.14),0_0_0_4px_rgba(255,122,90,0.10)] group-hover:block">
+            To minimize the impact of a security breach, avoid using the same password across multiple platforms. Unique passwords ensure that one compromised account doesn&apos;t grant access to your entire digital identity.
+          </span>
+        </span>
+       and these should be changed, according to many cybersecurity experts, every 90 days. This makes remembering 20 or
+        30 passwords quite hard, so most people have one simple password that they use for all of their accounts.
+      </>,
+      <>
+        2 Factor authentication is not always a failsafe either. Hackers can transfer your SIM to another SIM, which gives
+        them access to the 2FA application. Malware could also be downloaded onto a user&apos;s phone to intentionally target a
+        user&apos;s swipes and cookies to gain access.
+      </>,
+      <>
+        <span className="underline decoration-[#FF7A5A] decoration-2 underline-offset-2">
+          Password management systems help mitigate some of the cybersecurity risks
+        </span>{" "}
+        that people have when navigating user login data on different applications and websites.
+      </>,
+    ],
+  },
+  {
+    title: "How does it help?",
+    articleParagraphs: [
+      <>
+        Password management systems help mitigate these risks by setting secure passwords (that can vary in length and
+        difficulty based on what is needed). These are stored in vault.
+      </>,
+      <>
+        You might think that a hacker could have even easier access to your data by specifically targeting password
+        management systems, but these follow a principle called{" "}
+        <span className="group relative inline-block align-middle">
+          <span className="rounded-md bg-[#FF7A5A]/25 px-1.5 py-0.5 font-semibold text-[#4F5555]">
+            Zero-Knowledge Encryption
+          </span>
+          <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-3 hidden w-72 -translate-x-1/2 rounded-lg border-2 border-[#FF7A5A]/60 bg-[#FFFFFF] p-3 text-sm leading-6 text-[#4F5555] shadow-[0_10px_30px_rgba(79,85,85,0.14),0_0_0_4px_rgba(255,122,90,0.10)] group-hover:block">
+            Zero-knowledge encryption means that no one but you, not even the company storing the data, can access and decrypt your data.
+          </span>
+        </span>
+        .
+      </>,
+      <>
+        So, that means you are able to store all of your passwords and passkeys in a digital vault that only you are able to
+        read. You only need to remember one password and change it periodically in order to access the data.
+      </>,
+      <>
+        That means the only way for a hacker to gain access to your data would be to take your computer while also knowing
+        the password to your password management system.
+      </>,
     ],
   },
   {
@@ -141,32 +223,14 @@ export default function OnePasswordPage() {
             {slide.title}
           </h2>
 
-          {slide.points && currentSlide === 0 && (
+          {slide.articleParagraphs && (
             <article className="mx-auto mt-8 max-w-4xl rounded-xl border border-[#4F5555]/25 bg-[#FFFFFF] p-6 shadow-[0_10px_30px_rgba(79,85,85,0.10)]">
               <div className="space-y-5">
-                <p className="text-base leading-8 text-[#4F5555]/90">
-                  People tend to create <span className="rounded-md bg-[#FF7A5A]/25 px-1.5 py-0.5 font-semibold text-[#4F5555]">crackable passwords</span> that are easy to
-                  hack into. Most people looking to hack into accounts use various dictionaries that are available online to try
-                  and figure out what passwords people have.
-                </p>
-
-                <p className="text-base leading-8 text-[#4F5555]/90">
-                  If your password is <span className="rounded-md bg-[#FF7A5A]/25 px-1.5 py-0.5 font-semibold text-[#4F5555]">Berlin2016InOmNiA!!</span>, this will{" "}
-                  <span className="underline decoration-[#FF7A5A] decoration-2 underline-offset-2">only take a few minutes at most to be cracked</span> since
-                  these systems continue to attempt combinations until they succeed.
-                </p>
-
-                <p className="text-base leading-8 text-[#4F5555]/90">
-                  Even if you try to trick the system by replacing letters with numbers, if the spelling is still correct,
-                  hackers can do this as well. So, B3rl1n2016Ins0mNi4!! is also an insecure password as "1" is a common
-                  replacement for "i", "0" for "o" and "4" for "a". This writing form is called leet or 1337 where letters are
-                  replaced by numbers.
-                </p>
-
-                <p className="text-base leading-8 text-[#4F5555]/90">
-                  Stronger passwords would have intentional misspellings like{" "}
-                  <span className="rounded-md bg-[#FF7A5A]/25 px-1.5 py-0.5 font-semibold text-[#4F5555]">Be3rli1n2016Inns0pmNi4!!</span>
-                </p>
+                {slide.articleParagraphs.map((paragraph, index) => (
+                  <p key={index} className="text-base leading-8 text-[#4F5555]/90">
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </article>
           )}
@@ -216,7 +280,7 @@ export default function OnePasswordPage() {
             </div>
           )}
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap justify-end gap-3">
             {currentSlide > 0 && (
               <button
                 type="button"
