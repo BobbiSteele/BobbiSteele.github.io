@@ -6,6 +6,7 @@ const MENU_ITEMS = [
   { label: "Writing portfolio", href: "/writing-portfolio" },
   { label: "Ghostwriting", href: "/ghostwriting" },
   { label: "Tools", href: "/tools" },
+  { label: "Curriculum vitae", href: "/curriculum-vitae" },
   { label: "Contact me", href: "/contact" },
 ];
 
