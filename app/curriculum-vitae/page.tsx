@@ -2,6 +2,26 @@ import Link from "next/link";
 
 const JOBS = [
   {
+    title: "Freelance Digital Marketing Specialist",
+    company: "Self-employed",
+    period: "May 2026 – present",
+    industry: "B2B SaaS & deep-tech marketing",
+    accomplishments: [
+      "Providing freelance marketing services for B2B SaaS and deep-tech clients, including content strategy, ABM, and go-to-market support.",
+    ],
+  },
+  {
+    title: "Professional Development",
+    company: "Career break",
+    period: "Oct 2025 – Apr 2026",
+    industry: "Full-stack development & computer science",
+    accomplishments: [
+      "Completed a full-stack developer bootcamp (velpTEC, in German), including individual and group frontend/backend qualification projects.",
+      "Built hands-on projects with JavaScript (React, Next.js, Node.js), Python, SQL, and REST/GraphQL APIs to deepen technical fluency.",
+      "Began a part-time B.Sc. in Computer Science at FernUniversität Hagen to partner more effectively with product and engineering teams.",
+    ],
+  },
+  {
     title: "Senior Content Marketing & PR Manager",
     company: "Micropsi Industries",
     period: "Sep 2024 – Oct 2025",
@@ -21,10 +41,13 @@ const JOBS = [
     industry: "B2B drone technology & consulting",
     accomplishments: [
       "Owned all marketing for two companies and directed the sales strategy to grow the customer base for DroneTalks (marketing agency).",
+      "Increased lead generation by 40% and conversion rates by 30% within the first six months at DroneTalks through SEO, targeted content, and multi-channel campaigns.",
+      "Grew Murzilli Consulting's audience by 35% within the first year and improved funnel conversion rates by 25% alongside the sales manager.",
       "Led website design and build, working hands-on with HTML5 and CSS.",
       "Launched products, including SaaS products, for a range of B2B drone companies.",
       "Drafted all customer contracts and coordinated with the legal department on revisions.",
       "Managed and mentored a team of junior copywriters and content creators, improving content production efficiency and team performance metrics by 30%.",
+      "Hired and trained several marketing professionals, growing the team by 50% while significantly improving retention.",
     ],
   },
   {
@@ -36,6 +59,66 @@ const JOBS = [
       "Led content marketing campaigns and strategy, including press coordination.",
       "Developed and executed a content strategy that increased web traffic by 40% and significantly lifted engagement, applying SEO optimisation and audience analytics.",
       "Wrote copy for email, social, and web campaigns, achieving conversion rates averaging 15% above industry benchmarks.",
+      "Translated complex insurance contracts into English and obtained legal approvals to ensure regulatory compliance.",
+      "Wrote and distributed press releases for critical funding rounds.",
+      "Designed and executed A/B tests for email campaigns and landing pages, optimising content effectiveness based on empirical data.",
+      "Wrote high-impact CRM emails in English and German and established editorial guidelines to ensure consistency across all corporate communications.",
+    ],
+  },
+  {
+    title: "Copywriter",
+    company: "numa (formerly COSI Group)",
+    period: "Jul 2020 – Jun 2021",
+    industry: "Proptech / hospitality tech",
+    accomplishments: [
+      "Created engaging, SEO-optimised copy communicating the brand's value proposition and co-created over 20 landing pages with the content team.",
+      "Managed the content creation pipeline, ensuring timely production, editing, and publication of quality content across multiple platforms.",
+      "Wrote numerous B2B and B2C articles, adapting tone and style to different audiences and market sectors.",
+      "Authored two in-depth white papers and several interactive B2B proptech research websites for enterprise customers.",
+    ],
+  },
+  {
+    title: "Content Marketer (Internship)",
+    company: "Körber Digital",
+    period: "Feb 2020 – Jul 2020",
+    industry: "Industrial / manufacturing tech",
+    accomplishments: [
+      "Wrote B2B articles and white papers for the manufacturing industry, applying SEO best practices to increase visibility.",
+      "Translated manufacturing manuals from German to English, ensuring clarity and accuracy.",
+      "Co-managed the content management system (CMS) with the senior copywriter and helped plan and implement social media strategies.",
+    ],
+  },
+  {
+    title: "Academic Editor",
+    company: "Self-employed",
+    period: "Oct 2017 – Mar 2020",
+    industry: "Academic editing & translation",
+    accomplishments: [
+      "Edited numerous academic papers for clarity and coherence while studying at Freie Universität Berlin, ensuring compliance with APA, MLA, and Chicago style guides.",
+      "Worked closely with faculty to accurately represent their research in English, advising on argumentation, structure, and use of evidence.",
+      "Managed multiple editing assignments simultaneously and became a trusted editing resource across departments.",
+    ],
+  },
+  {
+    title: "International Mentor",
+    company: "Universität Kassel",
+    period: "Oct 2016 – Sep 2017",
+    industry: "Higher education",
+    accomplishments: [
+      "Provided German-to-English translation services for the English Literature Department and the International Office.",
+      "Supported faculty and students in their research and reviewed ERASMUS application essays, advising on structure and articulation of academic goals.",
+      "Organised cultural and social events for international students, promoting integration and enriching academic life.",
+    ],
+  },
+  {
+    title: "Academic Editor — Writing Center",
+    company: "University of Wisconsin Oshkosh",
+    period: "Oct 2013 – Jun 2016",
+    industry: "Higher education",
+    accomplishments: [
+      "Provided one-on-one editing and tutoring to a diverse group of students, developing individualised teaching strategies for ESL students and students with disabilities.",
+      "Created and led workshops addressing common writing challenges, significantly improving essay quality.",
+      "Collaborated with other tutors to evolve the center's services in response to changing academic needs and feedback.",
     ],
   },
 ];
@@ -151,7 +234,7 @@ export default function CurriculumVitaePage() {
             <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-zinc-700" />
 
             {JOBS.map((job) => (
-              <article key={job.company} className="relative pb-20 last:pb-0">
+              <article key={`${job.company}-${job.period}`} className="relative pb-20 last:pb-0">
                 {/* Job header, centered on the line */}
                 <header className="relative mx-auto max-w-lg pb-10 text-center">
                   {/* Fade the line out behind the header */}
