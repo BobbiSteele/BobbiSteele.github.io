@@ -3,7 +3,7 @@ import PasswordGate from "../PasswordGate";
 
 export default function GhostwritingPage() {
   return (
-    <PasswordGate>
+    <PasswordGate gate="ghostwriting">
       <main className="min-h-screen bg-zinc-950 text-zinc-100 relative" style={{ margin: 0, padding: 0 }}>
       <div className="pt-12 pl-32 pr-16 pb-24">
         <Link

@@ -13,19 +13,6 @@ const MENU_ITEMS = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-100 relative" style={{ margin: 0, padding: 0 }}>
-      <h1
-        className="fixed left-0 top-1/2 text-6xl font-bold tracking-tight text-white sm:text-7xl whitespace-nowrap"
-        style={{
-          fontFamily: 'var(--font-space-grotesk)',
-          writingMode: 'vertical-rl',
-          transform: 'translateY(-50%) rotate(180deg)',
-          margin: 0,
-          padding: 0,
-        }}
-      >
-        Bobbi Steele
-      </h1>
-
       <p
         className="fixed right-0 top-1/2 text-sm uppercase tracking-[0.25em] text-zinc-400 whitespace-nowrap"
         style={{
@@ -47,6 +34,19 @@ export default function Home() {
         <div className="mt-16">
           <Typewriter />
         </div>
+
+        <p
+          className="mt-16 max-w-2xl text-xl leading-relaxed text-zinc-300"
+          style={{ fontFamily: 'var(--font-space-grotesk)' }}
+        >
+          Senior digital marketing specialist with 6+ years of experience driving demand,
+          positioning and go-to-market strategy for B2B SaaS and deep-tech products. This
+          includes industrial AI and robotics, drones and insurtech. I specialise in ABM,
+          messaging, and full-funnel content that engages technical buyers, from engineers
+          to C-suite executives. With hands-on expertise in JavaScript, APIs, and SQL, I
+          partner effectively with product and engineering teams to translate complex
+          technology into credible, compelling market narratives.
+        </p>
       </div>
 
       <nav

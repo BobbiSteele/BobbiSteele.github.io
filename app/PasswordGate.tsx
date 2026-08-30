@@ -5,8 +5,13 @@ import { useEffect, useState } from "react";
 // Honestly, this isn't secure at all. If you found this, then great job! 
 // I just dont want my portfolio to be indexed by search engines or crawled by bots.
 
-const PASSWORD_HASH =
-  "9881928f60e14fcbd7a28d2166ee4e8ba456daa9df696159dcae35050762895b"; // "portfolio2026"
+const GATES: Record<string, string> = {
+  // section id -> sha256 hash of its password
+  "writing-portfolio":
+    "9881928f60e14fcbd7a28d2166ee4e8ba456daa9df696159dcae35050762895b", // "portfolio2026"
+  ghostwriting:
+    "e23fbdde6bce9c5d6f08d338c6fbbd04e1d8d77c193addc02188a0c4e7d7f10c", // "ghost2026"
+};
 
 async function sha256Hex(text: string): Promise<string> {
   const bytes = new TextEncoder().encode(text);
@@ -16,22 +21,30 @@ async function sha256Hex(text: string): Promise<string> {
     .join("");
 }
 
-export default function PasswordGate({ children }: { children: React.ReactNode }) {
+export default function PasswordGate({
+  gate,
+  children,
+}: {
+  gate: keyof typeof GATES;
+  children: React.ReactNode;
+}) {
   const [unlocked, setUnlocked] = useState(false);
   const [checked, setChecked] = useState(false);
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    setUnlocked(sessionStorage.getItem("pw-unlocked") === "1");
+    // sessionStorage is scoped to the tab: navigating between pages of the same
+    // section keeps it unlocked, but a new visit asks for the password again.
+    setUnlocked(sessionStorage.getItem(`pw-unlocked-${gate}`) === "1");
     setChecked(true);
-  }, []);
+  }, [gate]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const hash = await sha256Hex(input);
-    if (hash === PASSWORD_HASH) {
-      sessionStorage.setItem("pw-unlocked", "1");
+    if (hash === GATES[gate]) {
+      sessionStorage.setItem(`pw-unlocked-${gate}`, "1");
       setUnlocked(true);
       setError(false);
     } else {
