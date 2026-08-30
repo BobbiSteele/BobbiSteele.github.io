@@ -1,8 +1,10 @@
 import Link from "next/link";
+import PasswordGate from "../PasswordGate";
 
 export default function GhostwritingPage() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-100 relative" style={{ margin: 0, padding: 0 }}>
+    <PasswordGate>
+      <main className="min-h-screen bg-zinc-950 text-zinc-100 relative" style={{ margin: 0, padding: 0 }}>
       <div className="pt-12 pl-32 pr-16 pb-24">
         <Link
           href="/"
@@ -21,6 +23,7 @@ export default function GhostwritingPage() {
 
         <p className="mt-16 max-w-xl text-zinc-400">Coming soon.</p>
       </div>
-    </main>
+      </main>
+    </PasswordGate>
   );
 }
