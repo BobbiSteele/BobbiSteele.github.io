@@ -36,7 +36,7 @@ export default function Home() {
         </div>
 
         <p
-          className="mt-16 max-w-2xl text-xl leading-relaxed text-zinc-300"
+          className="mt-16 max-w-4xl text-xl leading-relaxed text-zinc-300"
           style={{ fontFamily: 'var(--font-space-grotesk)' }}
         >
           Senior digital marketing specialist with 6+ years of experience driving demand,

@@ -11,6 +11,10 @@ const GATES: Record<string, string> = {
     "9881928f60e14fcbd7a28d2166ee4e8ba456daa9df696159dcae35050762895b", // "portfolio2026"
   ghostwriting:
     "e23fbdde6bce9c5d6f08d338c6fbbd04e1d8d77c193addc02188a0c4e7d7f10c", // "ghost2026"
+  "ghostwriting-thought-leadership":
+    "343324a6a81bb3d794f95c6850d5c90103f3efdd66ad1ea56118b01426f3960a", // "thought2026"
+  "ghostwriting-rest":
+    "f30ad84cdb4d157a3f2f6672488c5f60c8aa0a4249f5070121b7ae4b52e9ee47", // "rest2026"
 };
 
 async function sha256Hex(text: string): Promise<string> {
