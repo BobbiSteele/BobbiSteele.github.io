@@ -1,42 +1,70 @@
 import Link from "next/link";
+import Typewriter from "./Typewriter";
+
+const MENU_ITEMS = [
+  { label: "Projects", href: "/projects" },
+  { label: "Writing portfolio", href: "/writing-portfolio" },
+  { label: "Ghostwriting", href: "/ghostwriting" },
+  { label: "Tools", href: "/tools" },
+  { label: "Contact me", href: "/contact" },
+];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-100">
-      <div className="mx-auto flex w-full max-w-4xl flex-col gap-12 px-6 py-20 sm:px-10">
-        <section className="flex items-center gap-8">
-          <div className="space-y-2">
-            <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl font-[family-name:var(--font-space-grotesk)]">
-              Bobbi Steele
-            </h1>
-            <p className="text-xl text-zinc-300 font-[family-name:var(--font-space-grotesk)]">
-              Digital Marketing Specialist
-            </p>
-          </div>
-        </section>
+    <main className="min-h-screen bg-zinc-950 text-zinc-100 relative" style={{ margin: 0, padding: 0 }}>
+      <h1
+        className="fixed left-0 top-1/2 text-6xl font-bold tracking-tight text-white sm:text-7xl whitespace-nowrap"
+        style={{
+          fontFamily: 'var(--font-space-grotesk)',
+          writingMode: 'vertical-rl',
+          transform: 'translateY(-50%) rotate(180deg)',
+          margin: 0,
+          padding: 0,
+        }}
+      >
+        Bobbi Steele
+      </h1>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-medium text-white">Projects</h2>
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-5">
-            <Link
-              href="/1password"
-              className="inline-flex items-center text-lg font-medium text-zinc-100 underline decoration-zinc-600 underline-offset-4 transition hover:text-white hover:decoration-zinc-300"
-            >
-              1Password
-            </Link>
-            <p className="mt-2 text-sm text-zinc-400">Security &amp; IT Awareness training</p>
-          </div>
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-5">
-            <Link
-              href="/Data-cleaning-bot"
-              className="inline-flex items-center text-lg font-medium text-zinc-100 underline decoration-zinc-600 underline-offset-4 transition hover:text-white hover:decoration-zinc-300"
-            >
-              Work in progress:Data Cleaning Bot
-            </Link>
-            <p className="mt-2 text-sm text-zinc-400">Clean CSV files with Groq and PandasAI in your browser</p>
-          </div>
-        </section>
+      <p
+        className="fixed right-0 top-1/2 text-sm uppercase tracking-[0.25em] text-zinc-400 whitespace-nowrap"
+        style={{
+          fontFamily: 'var(--font-space-grotesk)',
+          writingMode: 'vertical-rl',
+          transform: 'translateY(-50%)',
+          margin: 0,
+          padding: 0,
+        }}
+      >
+        &copy; 2026 Bobbi Steele
+      </p>
+
+      <div className="pt-12 pl-32 pr-16">
+        <p className="text-6xl font-semibold text-white sm:text-7xl italic" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+          Digital Marketing Specialist
+        </p>
+
+        <div className="mt-16">
+          <Typewriter />
+        </div>
       </div>
+
+      <nav
+        className="fixed bottom-0 left-0 right-0 pl-32 pr-16 pb-10"
+        style={{ fontFamily: 'var(--font-space-grotesk)' }}
+      >
+        <ul className="flex flex-wrap items-center gap-x-10 gap-y-3">
+          {MENU_ITEMS.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="text-lg text-zinc-300 transition hover:text-white"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </main>
   );
 }
