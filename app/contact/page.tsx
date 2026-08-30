@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
   return (
@@ -19,7 +20,7 @@ export default function ContactPage() {
           Contact me
         </h1>
 
-        <p className="mt-16 max-w-xl text-zinc-400">Coming soon.</p>
+        <ContactForm />
       </div>
     </main>
   );
