@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import SideName from "./SideName";
 import Copyright from "./Copyright";
-import MobileNav from "./MobileNav";
+import SiteNav from "./SiteNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +37,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <SideName />
-        <MobileNav />
+        <SiteNav />
         <Copyright />
         {children}
         <footer

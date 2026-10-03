@@ -7,11 +7,11 @@ export default function ThoughtLeadershipPage() {
       <main className="min-h-screen bg-zinc-950 text-zinc-100 relative" style={{ margin: 0, padding: 0 }}>
         <div className="pt-12 pl-6 pr-6 pb-24 md:pl-32 md:pr-16">
           <Link
-            href="/ghostwriting/"
+            href="/writing/"
             className="text-sm uppercase tracking-[0.25em] text-zinc-400 transition hover:text-white"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            &larr; Ghostwriting
+            &larr; Writing
           </Link>
 
           <h1
