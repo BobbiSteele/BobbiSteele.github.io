@@ -24,7 +24,7 @@ function LanguageTags({ languages }: { languages: string[] }) {
 export default function ToolsPage() {
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-100 relative" style={{ margin: 0, padding: 0 }}>
-      <div className="pt-12 pl-32 pr-16 pb-24">
+      <div className="pt-12 pl-6 pr-6 pb-24 md:pl-32 md:pr-16">
         <Link
           href="/"
           className="text-sm uppercase tracking-[0.25em] text-zinc-400 transition hover:text-white"
@@ -34,14 +34,14 @@ export default function ToolsPage() {
         </Link>
 
         <h1
-          className="mt-8 text-6xl font-semibold text-white sm:text-7xl italic"
+          className="mt-8 text-4xl font-semibold text-white sm:text-6xl lg:text-7xl italic"
           style={{ fontFamily: "var(--font-space-grotesk)" }}
         >
           Tools
         </h1>
 
-        <div className="mt-16 grid max-w-5xl gap-6 sm:grid-cols-2">
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-5">
+        <div className="mt-16 grid max-w-5xl grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-4 sm:p-5">
             <h2
               className="text-lg font-medium text-zinc-100"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
@@ -59,7 +59,7 @@ export default function ToolsPage() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-5">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-4 sm:p-5">
             <h2
               className="text-lg font-medium text-zinc-100"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
@@ -76,7 +76,7 @@ export default function ToolsPage() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-5">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-4 sm:p-5">
             <h2
               className="text-lg font-medium text-zinc-100"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
@@ -93,7 +93,7 @@ export default function ToolsPage() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-5">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-4 sm:p-5">
             <h2
               className="text-lg font-medium text-zinc-100"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
@@ -110,7 +110,7 @@ export default function ToolsPage() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-5">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 p-4 sm:p-5">
             <h2
               className="text-lg font-medium text-zinc-100"
               style={{ fontFamily: "var(--font-space-grotesk)" }}

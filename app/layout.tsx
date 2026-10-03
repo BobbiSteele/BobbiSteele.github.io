@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import SideName from "./SideName";
 import Copyright from "./Copyright";
+import MobileNav from "./MobileNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,8 +37,15 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <SideName />
+        <MobileNav />
         <Copyright />
         {children}
+        <footer
+          className="px-6 pb-10 pt-4 text-center text-xs uppercase tracking-[0.25em] text-zinc-500 md:hidden"
+          style={{ fontFamily: "var(--font-space-grotesk)" }}
+        >
+          2026 &copy; Bobbi Steele
+        </footer>
       </body>
     </html>
   );

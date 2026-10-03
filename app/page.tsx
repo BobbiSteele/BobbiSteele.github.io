@@ -13,17 +13,17 @@ const MENU_ITEMS = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-100 relative" style={{ margin: 0, padding: 0 }}>
-      <div className="pt-12 pl-32 pr-16">
-        <p className="text-6xl font-semibold text-white sm:text-7xl italic" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+      <div className="pt-8 pl-6 pr-6 md:pt-12 md:pl-32 md:pr-16">
+        <p className="text-4xl font-semibold text-white sm:text-6xl lg:text-7xl italic" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
           Digital Marketing Specialist
         </p>
 
-        <div className="mt-16">
+        <div className="mt-10 sm:mt-16">
           <Typewriter />
         </div>
 
         <p
-          className="mt-16 max-w-4xl text-xl leading-relaxed text-zinc-300"
+          className="mt-10 max-w-4xl text-lg leading-relaxed text-zinc-300 sm:mt-16 sm:text-xl"
           style={{ fontFamily: 'var(--font-space-grotesk)' }}
         >
           Senior digital marketing specialist with 6+ years of experience driving demand,
@@ -32,7 +32,7 @@ export default function Home() {
         </p>
 
         <p
-          className="mt-6 max-w-4xl text-xl leading-relaxed text-zinc-300"
+          className="mt-6 max-w-4xl text-lg leading-relaxed text-zinc-300 sm:text-xl"
           style={{ fontFamily: 'var(--font-space-grotesk)' }}
         >
           I specialise in ABM, messaging, and full-funnel content that engages technical
@@ -43,15 +43,15 @@ export default function Home() {
       </div>
 
       <nav
-        className="fixed bottom-0 left-0 right-0 pl-32 pr-16 pb-10"
+        className="hidden md:fixed md:bottom-0 md:left-0 md:right-0 md:block md:pl-32 md:pr-16 md:pb-10"
         style={{ fontFamily: 'var(--font-space-grotesk)' }}
       >
-        <ul className="flex flex-wrap items-center gap-x-10 gap-y-3">
+        <ul className="flex flex-wrap items-center gap-x-6 gap-y-3 sm:gap-x-10">
           {MENU_ITEMS.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="text-lg text-zinc-300 transition hover:text-white"
+                className="text-base text-zinc-300 transition hover:text-white sm:text-lg"
               >
                 {item.label}
               </Link>

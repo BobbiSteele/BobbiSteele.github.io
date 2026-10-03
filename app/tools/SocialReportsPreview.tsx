@@ -123,7 +123,7 @@ export default function SocialReportsPreview() {
         </span>
       </div>
 
-      <div className="p-4 text-left">
+      <div className="p-3 text-left sm:p-4">
         <p className="text-xs font-medium text-zinc-200" style={grotesk}>
           Social Media Report Cleaner
         </p>

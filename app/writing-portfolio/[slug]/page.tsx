@@ -41,7 +41,7 @@ export default async function ArticlePage({
   return (
     <PasswordGate gate="writing-portfolio">
       <main className="min-h-screen bg-zinc-950 text-zinc-100 relative" style={{ margin: 0, padding: 0 }}>
-        <div className="pt-12 pl-32 pr-16 pb-24">
+        <div className="pt-12 pl-6 pr-6 pb-24 md:pl-32 md:pr-16">
           <Link
             href={`/writing-portfolio/category/${categorySlug(article.category)}/`}
             className="text-sm uppercase tracking-[0.25em] text-zinc-400 transition hover:text-white"

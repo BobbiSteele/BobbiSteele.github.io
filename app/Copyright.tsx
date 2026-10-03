@@ -1,7 +1,7 @@
 export default function Copyright() {
   return (
     <p
-      className="fixed right-0 top-1/2 z-50 text-sm uppercase tracking-[0.25em] text-zinc-400 whitespace-nowrap"
+      className="fixed right-0 top-1/2 z-50 hidden text-sm uppercase tracking-[0.25em] text-zinc-400 whitespace-nowrap md:block"
       style={{
         fontFamily: "var(--font-space-grotesk)",
         writingMode: "vertical-rl",

@@ -158,7 +158,7 @@ export default function LinkedInFollowersPreview() {
         </span>
       </div>
 
-      <div className="p-4 text-left">
+      <div className="p-3 text-left sm:p-4">
         <p className="text-xs font-medium text-zinc-200" style={grotesk}>
           LinkedIn Followers Report
         </p>

@@ -195,7 +195,7 @@ const grotesk = { fontFamily: "var(--font-space-grotesk)" };
 export default function CurriculumVitaePage() {
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-100 relative" style={{ margin: 0, padding: 0 }}>
-      <div className="pt-12 pl-32 pr-16 pb-24">
+      <div className="pt-12 pl-6 pr-6 pb-24 md:pl-32 md:pr-16">
         <Link
           href="/"
           className="text-sm uppercase tracking-[0.25em] text-zinc-400 transition hover:text-white"
@@ -204,7 +204,7 @@ export default function CurriculumVitaePage() {
           &larr; Home
         </Link>
 
-        <h1 className="mt-8 text-6xl font-semibold text-white sm:text-7xl italic" style={grotesk}>
+        <h1 className="mt-8 text-4xl font-semibold text-white sm:text-6xl lg:text-7xl italic" style={grotesk}>
           Curriculum vitae
         </h1>
 
@@ -215,8 +215,8 @@ export default function CurriculumVitaePage() {
           </h2>
 
           <div className="relative mt-12">
-            {/* Center line */}
-            <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-zinc-700" />
+            {/* Center line (desktop only) */}
+            <span className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-zinc-700 sm:block" />
 
             {JOBS.map((job) => (
               <article key={`${job.company}-${job.period}`} className="relative pb-20 last:pb-0">
@@ -238,7 +238,7 @@ export default function CurriculumVitaePage() {
                     >
                       {job.period}
                     </p>
-                    <h3 className="mt-3 text-3xl font-bold text-white sm:text-4xl" style={grotesk}>
+                    <h3 className="mt-3 text-2xl font-bold text-white sm:text-3xl md:text-4xl" style={grotesk}>
                       {job.title}
                     </h3>
                     <p className="mt-2 text-xl text-zinc-300" style={grotesk}>
@@ -255,16 +255,16 @@ export default function CurriculumVitaePage() {
                   {job.accomplishments.map((item, i) => {
                     const left = i % 2 === 0;
                     return (
-                      <li key={i} className="relative grid grid-cols-2 items-center gap-x-16">
-                        {/* Connector + node */}
+                      <li key={i} className="relative grid grid-cols-1 items-center sm:grid-cols-2 sm:gap-x-16">
+                        {/* Connector + node (desktop only) */}
                         <span
-                          className={`absolute top-1/2 h-px w-8 bg-zinc-700 ${
+                          className={`absolute top-1/2 hidden h-px w-8 bg-zinc-700 sm:block ${
                             left ? "left-1/2 -translate-x-full" : "left-1/2"
                           }`}
                         />
-                        <span className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-zinc-600" />
+                        <span className="absolute left-1/2 top-1/2 hidden h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-zinc-600 sm:block" />
 
-                        <div className={left ? "col-start-1" : "col-start-2"}>
+                        <div className={left ? "" : "sm:col-start-2"}>
                           <div className="rounded-xl border border-zinc-800 bg-zinc-900/70 px-5 py-4 text-sm leading-relaxed text-zinc-300">
                             {item}
                           </div>

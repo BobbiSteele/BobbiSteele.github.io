@@ -96,7 +96,7 @@ export default function CsvMatchPreview() {
         </span>
       </div>
 
-      <div className="p-4 text-left">
+      <div className="p-3 text-left sm:p-4">
         <p className="text-xs font-medium text-zinc-200" style={grotesk}>
           CSV Cross-Match Finder
         </p>

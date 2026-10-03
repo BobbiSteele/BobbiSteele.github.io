@@ -125,7 +125,7 @@ export default function ZoomEngagementPreview() {
         </span>
       </div>
 
-      <div className="p-4 text-left">
+      <div className="p-3 text-left sm:p-4">
         <p className="text-xs font-medium text-zinc-200" style={grotesk}>
           Zoom Engagement Report
         </p>
@@ -140,9 +140,9 @@ export default function ZoomEngagementPreview() {
               >
                 {slot.label}
               </span>
-              <div className="flex h-6 flex-1 items-center rounded border border-zinc-700 bg-zinc-900 px-2">
+              <div className="flex h-6 flex-1 items-center overflow-hidden rounded border border-zinc-700 bg-zinc-900 px-2">
                 <span
-                  className={`flex items-center gap-1.5 text-[11px] text-zinc-300 transition-all duration-300 ${
+                  className={`flex min-w-0 items-center gap-1.5 truncate text-[11px] text-zinc-300 transition-all duration-300 ${
                     i < slotsShown ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0"
                   }`}
                 >
