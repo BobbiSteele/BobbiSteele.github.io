@@ -28,11 +28,17 @@ export default function Home() {
         >
           Senior digital marketing specialist with 6+ years of experience driving demand,
           positioning and go-to-market strategy for B2B SaaS and deep-tech products. This
-          includes industrial AI and robotics, drones and insurtech. I specialise in ABM,
-          messaging, and full-funnel content that engages technical buyers, from engineers
-          to C-suite executives. With hands-on expertise in JavaScript, APIs, and SQL, I
-          partner effectively with product and engineering teams to translate complex
-          technology into credible, compelling market narratives.
+          includes industrial AI and robotics, drones and insurtech.
+        </p>
+
+        <p
+          className="mt-6 max-w-4xl text-xl leading-relaxed text-zinc-300"
+          style={{ fontFamily: 'var(--font-space-grotesk)' }}
+        >
+          I specialise in ABM, messaging, and full-funnel content that engages technical
+          buyers, from engineers to C-suite executives. With hands-on expertise in
+          JavaScript, APIs, and SQL, I partner effectively with product and engineering
+          teams to translate complex technology into credible, compelling market narratives.
         </p>
       </div>
 

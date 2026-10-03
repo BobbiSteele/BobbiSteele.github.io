@@ -208,21 +208,6 @@ export default function CurriculumVitaePage() {
           Curriculum vitae
         </h1>
 
-        {/* Freelancing banner */}
-        <Link
-          href="/contact"
-          className="mt-8 inline-flex items-center gap-3 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-5 py-2.5 transition hover:border-emerald-400/60 hover:bg-emerald-500/20"
-          style={grotesk}
-        >
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
-          </span>
-          <span className="text-sm font-medium uppercase tracking-[0.2em] text-emerald-300">
-            Currently freelancing
-          </span>
-        </Link>
-
         {/* Experience timeline: center line, bubbles alternating */}
         <section className="mt-20 max-w-5xl">
           <h2 className="text-sm uppercase tracking-[0.3em] text-zinc-400" style={grotesk}>
